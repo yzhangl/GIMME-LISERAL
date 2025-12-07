@@ -28,3 +28,7 @@ The converted output csv file will contain columns:
 'file' (original complex filename), 'ff_id' (extracted five-digit participant ID),'lhs', 'rhs', 'beta', 'level' (group or ind)
 Note, the way ff_id is extracted assumes the original complex filename contains 'csm14aff' followed by the five-digit ID.
 The user also should change the mapping of VAR codes to the specific names of ROIs that matches the R GIMME outputs.
+
+## search_indSEM_betapsi_commented.py
+This function searches through an indSEM GIMME output folder structure for beta and psi files that contain any values greater than 1 or less than -1, which are considered "bad" beta/psi values.
+The function generates a summary CSV file listing participant IDs with bad beta and/or psi files, along with detailed logs of the specific anomalies found.
