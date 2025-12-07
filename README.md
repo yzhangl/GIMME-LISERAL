@@ -1,6 +1,17 @@
 # GIMME-LISERAL
 Supporting python code for integrating LISERAL-based GIMME outputs to R-based outputs
 
+## convertMatrix_commented.py
+This file defines function to convert R csv output into liseral input binary matrices (0/1).
+Input: R GIMME output CSV file with columns: lhs, op, rhs, beta, se, z, pval, level
+Output: Two binary matrices (lag and non-lag) in a single txt file, where each row is the lag matrix row followed by non-lag matrix row
+Note: Rows and columns correspond to specific brain regions defined in 'rows' dictionary
+
+## convertMatrix_txtinput_commented.py
+This file defines function that has similar utility as the previous one, except the input is now txt files for refitting from scratch.
+Input: txt file with each line: lhs ~ rhs (indicating a path from lhs to rhs)
+Output: Two binary matrices (lag and non-lag) in a single txt file (similar as above)
+
 ## liseral_AM_extract_commented.py
 This python function searches through an automatic search (defined with the AM command) LISERAL GIMME output txt file for the FIRST excellent fitting model (defined as 2 out of 4 goodness of fit statistics meeting conventional criteria).
 Once criteria is met, the function extracts:
