@@ -20,3 +20,11 @@ The function extracts:
 1) a csv file of the beta values, excluding lagged rows;
 2) a csv file of the standard error values of betas, excluding lagged rows;
 3) a csv file of the t-values of betas, excluding lagged rows;
+
+## convert_LISERALbeta_to_resting_commented.py
+This function converts the beta output files (in the same directory) extracted from LISERAL into a csv format that is compatible with the R GIMME package output format for further analysis.
+This script is for converting regular GIMME outputs, not for indSEM outputs. Specifically, the difference is in how group-level and individual-level paths are defined.
+The converted output csv file will contain columns:
+'file' (original complex filename), 'ff_id' (extracted five-digit participant ID),'lhs', 'rhs', 'beta', 'level' (group or ind)
+Note, the way ff_id is extracted assumes the original complex filename contains 'csm14aff' followed by the five-digit ID.
+The user also should change the mapping of VAR codes to the specific names of ROIs that matches the R GIMME outputs.
