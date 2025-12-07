@@ -12,3 +12,11 @@ Once criteria is met, the function extracts:
 
 Note, the current python file expects that the output txt file starts with "o" (e.g., "o10005.txt"). In this example, "10005" is the subid.
 The script also loops through ALL output txt files in the directory folder, which is user-specified.
+
+## liseral_single_extract_commented.py
+An adapted version of the AM extract function above that extracts the relevant information from a single estimated GIMME model (i.e., no AM command used).
+The user will need to specify the specific output file (e.g., "o10005.txt") and the directory in which you want the new extracted information to be saved. A new folder with the participant ID will be created within that directory.
+The function extracts:
+1) a csv file of the beta values, excluding lagged rows;
+2) a csv file of the standard error values of betas, excluding lagged rows;
+3) a csv file of the t-values of betas, excluding lagged rows;
