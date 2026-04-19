@@ -1,8 +1,8 @@
-# GIMME-LISERAL
-Supporting python code for integrating LISERAL-based GIMME outputs to R-based outputs
+# GIMME-LISREL
+Supporting python code for integrating LISREL-based GIMME outputs to R-based outputs
 
 ## convertMatrix_commented.py
-This file defines function to convert R csv output into liseral input binary matrices (0/1).
+This file defines function to convert R csv output into LISREL input binary matrices (0/1).
 
 Input: R GIMME output CSV file with columns: lhs, op, rhs, beta, se, z, pval, level
 
@@ -17,20 +17,20 @@ Input: txt file with each line: lhs ~ rhs (indicating a path from lhs to rhs)
 
 Output: Two binary matrices (lag and non-lag) in a single txt file (similar as above)
 
-## liseral_AM_extract_commented.py
-This python function searches through an automatic search (defined with the AM command) LISERAL GIMME output txt file for the FIRST excellent fitting model (defined as 2 out of 4 goodness of fit statistics meeting conventional criteria).
+## LISREL_AM_extract_commented.py
+This python function searches through an automatic search (defined with the AM command) LISREL GIMME output txt file for the FIRST excellent fitting model (defined as 2 out of 4 goodness of fit statistics meeting conventional criteria).
 Once criteria is met, the function extracts:
-1) a txt file of the beta estimates, in the original LISERAL format;
+1) a txt file of the beta estimates, in the original LISREL format;
 2) a csv file of the beta values, excluding lagged rows;
 3) a csv file of the standard error values of betas, excluding lagged rows;
 4) a csv file of the t-values of betas, excluding lagged rows;
-5) a txt file of the LISERAL model in the binary 1/0 format so you can input that into another LISERAL model for further refitting if needed
+5) a txt file of the LISREL model in the binary 1/0 format so you can input that into another LISREL model for further refitting if needed
 
 Note, the current python file expects that the output txt file starts with "o" (e.g., "o10005.txt"). In this example, "10005" is the subid.
 
 The script also loops through ALL output txt files in the directory folder, which is user-specified.
 
-## liseral_single_extract_commented.py
+## LISREL_single_extract_commented.py
 An adapted version of the AM extract function above that extracts the relevant information from a single estimated GIMME model (i.e., no AM command used).
 
 The user will need to specify the specific output file (e.g., "o10005.txt") and the directory in which you want the new extracted information to be saved. A new folder with the participant ID will be created within that directory.
@@ -40,8 +40,8 @@ The function extracts:
 2) a csv file of the standard error values of betas, excluding lagged rows;
 3) a csv file of the t-values of betas, excluding lagged rows;
 
-## convert_LISERALbeta_to_resting_commented.py
-This function converts the beta output files (in the same directory) extracted from LISERAL into a csv format that is compatible with the R GIMME package output format for further analysis.
+## convert_LISRELbeta_to_resting_commented.py
+This function converts the beta output files (in the same directory) extracted from LISREL into a csv format that is compatible with the R GIMME package output format for further analysis.
 
 This script is for converting regular GIMME outputs, not for indSEM outputs. Specifically, the difference is in how group-level and individual-level paths are defined.
 
